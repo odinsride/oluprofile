@@ -1,0 +1,20 @@
+base: &base
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+  database: oluprofile_dummy
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  host: localhost
+
+development:
+  <<: *base
+
+test:
+  <<: *base
+  database: oluprofile_dummy_test
+
+production:
+  <<: *base
+  database: oluprofile
