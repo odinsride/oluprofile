@@ -67,6 +67,7 @@ node_modules/
 # Ignore application configuration
 /config/application.yml
 spec/dummy/config/application.yml
+/spec/dummy/log
 
 # Ignore Dummy tmp folder
 spec/dummy/tmp
