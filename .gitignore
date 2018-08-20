@@ -67,7 +67,11 @@ node_modules/
 # Ignore application configuration
 /config/application.yml
 spec/dummy/config/application.yml
-/spec/dummy/log
-
-# Ignore Dummy tmp folder
-spec/dummy/tmp
+spec/dummy/log
+spec/dummy/db/*.sqlite3
+spec/dummy/db/*.sqlite3-journal
+spec/dummy/log/*.log
+spec/dummy/node_modules/
+spec/dummy/yarn-error.log
+spec/dummy/storage/
+spec/dummy/tmp/
