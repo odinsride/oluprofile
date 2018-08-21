@@ -15,6 +15,3 @@ gemspec
 group :test, :development do
   gem "pry-byebug"
 end
-      
-gem "pg"
-gem "figaro"

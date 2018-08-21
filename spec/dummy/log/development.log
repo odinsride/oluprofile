@@ -598,3 +598,241 @@ Processing by Oluprofile::UserSessionsController#new as HTML
 Completed 200 OK in 25ms (Views: 23.9ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/oluprofile" for 127.0.0.1 at 2018-08-21 17:20:16 -0400
+Processing by Oluprofile::UsersController#index as HTML
+Redirected to http://localhost:3000/oluprofile/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/oluprofile/login" for 127.0.0.1 at 2018-08-21 17:20:16 -0400
+Processing by Oluprofile::UserSessionsController#new as HTML
+  Rendering /home/sitheris/dev/railsapps/oluprofile/app/views/oluprofile/user_sessions/new.html.erb within layouts/oluprofile/application
+  Rendered /home/sitheris/dev/railsapps/oluprofile/app/views/oluprofile/user_sessions/_form.html.erb (158.7ms)
+  Rendered /home/sitheris/dev/railsapps/oluprofile/app/views/oluprofile/user_sessions/new.html.erb within layouts/oluprofile/application (161.0ms)
+Completed 500 Internal Server Error in 229ms (ActiveRecord: 11.7ms)
+
+
+
+NoMethodError - undefined method `input' for #<#<Class:0x000055dc3be7d2f0>:0x00007f595043d1f8>:
+
+Started POST "/oluprofile/__better_errors/75afde0e20a5413f/variables" for 127.0.0.1 at 2018-08-21 17:20:17 -0400
+Started GET "/oluprofile/login" for 127.0.0.1 at 2018-08-21 17:22:48 -0400
+Processing by Oluprofile::UserSessionsController#new as HTML
+  Rendering /home/sitheris/dev/railsapps/oluprofile/app/views/oluprofile/user_sessions/new.html.erb within layouts/oluprofile/application
+  Rendered /home/sitheris/dev/railsapps/oluprofile/app/views/oluprofile/user_sessions/_form.html.erb (2.1ms)
+  Rendered /home/sitheris/dev/railsapps/oluprofile/app/views/oluprofile/user_sessions/new.html.erb within layouts/oluprofile/application (3.4ms)
+Completed 200 OK in 207ms (Views: 205.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/oluprofile/user_sessions" for 127.0.0.1 at 2018-08-21 17:22:55 -0400
+Processing by Oluprofile::UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PyrA+hiWhtuU0dFZFlOREDpiWvH9NaVU297NyqscDBvtLbjD0lXmsUQFB7KDPURZJZib2gkW+Ab6x54r5eVzDg==", "email"=>"john@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mOluprofile::User Load (1.3ms)[0m  [1m[34mSELECT  "oluprofile_users".* FROM "oluprofile_users" WHERE "oluprofile_users"."email" = 'john@gmail.com' ORDER BY "oluprofile_users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ /home/sitheris/dev/railsapps/oluprofile/app/controllers/oluprofile/user_sessions_controller.rb:10
+  Rendering /home/sitheris/dev/railsapps/oluprofile/app/views/oluprofile/user_sessions/new.html.erb within layouts/oluprofile/application
+  Rendered /home/sitheris/dev/railsapps/oluprofile/app/views/oluprofile/user_sessions/_form.html.erb (0.7ms)
+  Rendered /home/sitheris/dev/railsapps/oluprofile/app/views/oluprofile/user_sessions/new.html.erb within layouts/oluprofile/application (1.5ms)
+Completed 200 OK in 112ms (Views: 12.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/oluprofile/users/new" for 127.0.0.1 at 2018-08-21 17:22:58 -0400
+Processing by Oluprofile::UsersController#new as HTML
+  Rendering /home/sitheris/dev/railsapps/oluprofile/app/views/oluprofile/users/new.html.erb within layouts/oluprofile/application
+  Rendered /home/sitheris/dev/railsapps/oluprofile/app/views/oluprofile/users/_form.html.erb (24.5ms)
+  Rendered /home/sitheris/dev/railsapps/oluprofile/app/views/oluprofile/users/new.html.erb within layouts/oluprofile/application (25.6ms)
+Completed 200 OK in 38ms (Views: 36.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/oluprofile/users" for 127.0.0.1 at 2018-08-21 17:23:19 -0400
+Processing by Oluprofile::UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"h7oqGj2OB2QPxTAe6aCy+y4YzeDcfq4QPiscLo+03rpVvVIj901nDt8R5vV8zmeyMeIMyyhd80IfMk/PwU2hrw==", "user"=>{"email"=>"john@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "first_name"=>"John", "last_name"=>"Smith", "description"=>"Developer", "phone_number"=>"555-555-5555", "location"=>"New York, NY"}, "commit"=>"Create User"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/sitheris/dev/railsapps/oluprofile/app/controllers/oluprofile/users_controller.rb:28
+  [1m[36mOluprofile::User Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "oluprofile_users" WHERE "oluprofile_users"."email" = $1 LIMIT $2[0m  [["email", "john@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/sitheris/dev/railsapps/oluprofile/app/controllers/oluprofile/users_controller.rb:28
+  [1m[36mOluprofile::User Create (0.7ms)[0m  [1m[32mINSERT INTO "oluprofile_users" ("email", "crypted_password", "salt", "first_name", "last_name", "description", "phone_number", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "john@gmail.com"], ["crypted_password", "$2a$10$cCVfvhZKcaEUgHLSffCa3eKnRCAvzGn8strCe8mI8Muu8xnaiEaGO"], ["salt", "82Y67Q9zWjYxRkK5zEm7"], ["first_name", "John"], ["last_name", "Smith"], ["description", "Developer"], ["phone_number", "555-555-5555"], ["location", "New York, NY"], ["created_at", "2018-08-21 21:23:19.495893"], ["updated_at", "2018-08-21 21:23:19.495893"]]
+  ↳ /home/sitheris/dev/railsapps/oluprofile/app/controllers/oluprofile/users_controller.rb:28
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/sitheris/dev/railsapps/oluprofile/app/controllers/oluprofile/users_controller.rb:28
+Redirected to http://localhost:3000/oluprofile/users
+Completed 302 Found in 73ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/oluprofile/users" for 127.0.0.1 at 2018-08-21 17:23:19 -0400
+Processing by Oluprofile::UsersController#index as HTML
+Redirected to http://localhost:3000/oluprofile/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/oluprofile/login" for 127.0.0.1 at 2018-08-21 17:23:19 -0400
+Processing by Oluprofile::UserSessionsController#new as HTML
+  Rendering /home/sitheris/dev/railsapps/oluprofile/app/views/oluprofile/user_sessions/new.html.erb within layouts/oluprofile/application
+  Rendered /home/sitheris/dev/railsapps/oluprofile/app/views/oluprofile/user_sessions/_form.html.erb (1.7ms)
+  Rendered /home/sitheris/dev/railsapps/oluprofile/app/views/oluprofile/user_sessions/new.html.erb within layouts/oluprofile/application (2.9ms)
+Completed 200 OK in 23ms (Views: 22.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/oluprofile/user_sessions" for 127.0.0.1 at 2018-08-21 17:23:28 -0400
+Processing by Oluprofile::UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r+6laTytnjyDhiR+kgBCaKNCdPpXMXTUKG5D9Cx8wdZ96d1Q9m7+VlNS8pUHbpchvLi10aMSKYYJdxAVYoW+ww==", "email"=>"john@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mOluprofile::User Load (0.4ms)[0m  [1m[34mSELECT  "oluprofile_users".* FROM "oluprofile_users" WHERE "oluprofile_users"."email" = 'john@gmail.com' ORDER BY "oluprofile_users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ /home/sitheris/dev/railsapps/oluprofile/app/controllers/oluprofile/user_sessions_controller.rb:10
+Redirected to http://localhost:3000/oluprofile/users
+Completed 302 Found in 127ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/oluprofile/users" for 127.0.0.1 at 2018-08-21 17:23:28 -0400
+Processing by Oluprofile::UsersController#index as HTML
+  [1m[36mOluprofile::User Load (0.2ms)[0m  [1m[34mSELECT  "oluprofile_users".* FROM "oluprofile_users" WHERE "oluprofile_users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/sitheris/dev/railsapps/oluprofile/app/views/oluprofile/users/index.html.erb within layouts/oluprofile/application
+  [1m[36mOluprofile::User Load (0.3ms)[0m  [1m[34mSELECT "oluprofile_users".* FROM "oluprofile_users"[0m
+  ↳ /home/sitheris/dev/railsapps/oluprofile/app/views/oluprofile/users/index.html.erb:19
+  Rendered /home/sitheris/dev/railsapps/oluprofile/app/views/oluprofile/users/index.html.erb within layouts/oluprofile/application (1.6ms)
+Completed 200 OK in 15ms (Views: 12.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/oluprofile/users" for 127.0.0.1 at 2018-08-21 17:36:39 -0400
+Processing by Oluprofile::UsersController#index as HTML
+  [1m[36mOluprofile::User Load (0.4ms)[0m  [1m[34mSELECT  "oluprofile_users".* FROM "oluprofile_users" WHERE "oluprofile_users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/sitheris/dev/railsapps/oluprofile/app/views/oluprofile/users/index.html.erb within layouts/oluprofile/application
+  [1m[36mOluprofile::User Load (1.1ms)[0m  [1m[34mSELECT "oluprofile_users".* FROM "oluprofile_users"[0m
+  ↳ /home/sitheris/dev/railsapps/oluprofile/app/views/oluprofile/users/index.html.erb:19
+  Rendered /home/sitheris/dev/railsapps/oluprofile/app/views/oluprofile/users/index.html.erb within layouts/oluprofile/application (5.0ms)
+Completed 500 Internal Server Error in 332ms (ActiveRecord: 6.8ms)
+
+
+
+Sass::SyntaxError - File to import not found or unreadable: materialize/components/color.
+Load paths:
+  /home/sitheris/dev/railsapps/oluprofile/spec/dummy/app/assets/config
+  /home/sitheris/dev/railsapps/oluprofile/spec/dummy/app/assets/images
+  /home/sitheris/dev/railsapps/oluprofile/spec/dummy/app/assets/javascripts
+  /home/sitheris/dev/railsapps/oluprofile/spec/dummy/app/assets/stylesheets
+  /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/jquery-ui-rails-6.0.1/app/assets/images
+  /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/jquery-ui-rails-6.0.1/app/assets/javascripts
+  /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/jquery-ui-rails-6.0.1/app/assets/stylesheets
+  /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/jquery-rails-4.3.3/vendor/assets/javascripts
+  /home/sitheris/dev/railsapps/oluprofile/app/assets/config
+  /home/sitheris/dev/railsapps/oluprofile/app/assets/images
+  /home/sitheris/dev/railsapps/oluprofile/app/assets/javascripts
+  /home/sitheris/dev/railsapps/oluprofile/app/assets/stylesheets
+  /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actioncable-5.2.1/lib/assets/compiled
+  /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/app/assets/javascripts
+  /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actionview-5.2.1/lib/assets/compiled
+  /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/rails-ujs-0.1.0/dist
+  /home/sitheris/dev/railsapps/oluprofile/spec/dummy/node_modules:
+
+Started POST "/oluprofile/__better_errors/bea28982582b5941/variables" for 127.0.0.1 at 2018-08-21 17:36:39 -0400
+Started GET "/oluprofile/users" for 127.0.0.1 at 2018-08-21 17:38:03 -0400
+Processing by Oluprofile::UsersController#index as HTML
+  [1m[36mOluprofile::User Load (0.3ms)[0m  [1m[34mSELECT  "oluprofile_users".* FROM "oluprofile_users" WHERE "oluprofile_users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/sitheris/dev/railsapps/oluprofile/app/views/oluprofile/users/index.html.erb within layouts/oluprofile/application
+  [1m[36mOluprofile::User Load (0.5ms)[0m  [1m[34mSELECT "oluprofile_users".* FROM "oluprofile_users"[0m
+  ↳ /home/sitheris/dev/railsapps/oluprofile/app/views/oluprofile/users/index.html.erb:19
+  Rendered /home/sitheris/dev/railsapps/oluprofile/app/views/oluprofile/users/index.html.erb within layouts/oluprofile/application (2.6ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.8ms)
+
+
+
+Sass::SyntaxError - File to import not found or unreadable: materialize.
+Load paths:
+  /home/sitheris/dev/railsapps/oluprofile/spec/dummy/app/assets/config
+  /home/sitheris/dev/railsapps/oluprofile/spec/dummy/app/assets/images
+  /home/sitheris/dev/railsapps/oluprofile/spec/dummy/app/assets/javascripts
+  /home/sitheris/dev/railsapps/oluprofile/spec/dummy/app/assets/stylesheets
+  /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/jquery-ui-rails-6.0.1/app/assets/images
+  /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/jquery-ui-rails-6.0.1/app/assets/javascripts
+  /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/jquery-ui-rails-6.0.1/app/assets/stylesheets
+  /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/jquery-rails-4.3.3/vendor/assets/javascripts
+  /home/sitheris/dev/railsapps/oluprofile/app/assets/config
+  /home/sitheris/dev/railsapps/oluprofile/app/assets/images
+  /home/sitheris/dev/railsapps/oluprofile/app/assets/javascripts
+  /home/sitheris/dev/railsapps/oluprofile/app/assets/stylesheets
+  /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actioncable-5.2.1/lib/assets/compiled
+  /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/app/assets/javascripts
+  /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actionview-5.2.1/lib/assets/compiled
+  /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/rails-ujs-0.1.0/dist
+  /home/sitheris/dev/railsapps/oluprofile/spec/dummy/node_modules:
+
+Started POST "/oluprofile/__better_errors/6f6b46914c314201/variables" for 127.0.0.1 at 2018-08-21 17:38:03 -0400
+Started GET "/oluprofile/users" for 127.0.0.1 at 2018-08-21 17:40:51 -0400
+Processing by Oluprofile::UsersController#index as HTML
+  [1m[36mOluprofile::User Load (0.6ms)[0m  [1m[34mSELECT  "oluprofile_users".* FROM "oluprofile_users" WHERE "oluprofile_users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/sitheris/dev/railsapps/oluprofile/app/views/oluprofile/users/index.html.erb within layouts/oluprofile/application
+  [1m[36mOluprofile::User Load (0.6ms)[0m  [1m[34mSELECT "oluprofile_users".* FROM "oluprofile_users"[0m
+  ↳ /home/sitheris/dev/railsapps/oluprofile/app/views/oluprofile/users/index.html.erb:19
+  Rendered /home/sitheris/dev/railsapps/oluprofile/app/views/oluprofile/users/index.html.erb within layouts/oluprofile/application (2.8ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.2ms)
+
+
+
+Sass::SyntaxError - File to import not found or unreadable: materialize.
+Load paths:
+  /home/sitheris/dev/railsapps/oluprofile/spec/dummy/app/assets/config
+  /home/sitheris/dev/railsapps/oluprofile/spec/dummy/app/assets/images
+  /home/sitheris/dev/railsapps/oluprofile/spec/dummy/app/assets/javascripts
+  /home/sitheris/dev/railsapps/oluprofile/spec/dummy/app/assets/stylesheets
+  /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/jquery-ui-rails-6.0.1/app/assets/images
+  /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/jquery-ui-rails-6.0.1/app/assets/javascripts
+  /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/jquery-ui-rails-6.0.1/app/assets/stylesheets
+  /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/jquery-rails-4.3.3/vendor/assets/javascripts
+  /home/sitheris/dev/railsapps/oluprofile/app/assets/config
+  /home/sitheris/dev/railsapps/oluprofile/app/assets/images
+  /home/sitheris/dev/railsapps/oluprofile/app/assets/javascripts
+  /home/sitheris/dev/railsapps/oluprofile/app/assets/stylesheets
+  /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actioncable-5.2.1/lib/assets/compiled
+  /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/app/assets/javascripts
+  /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actionview-5.2.1/lib/assets/compiled
+  /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/rails-ujs-0.1.0/dist
+  /home/sitheris/dev/railsapps/oluprofile/spec/dummy/node_modules:
+
+Started POST "/oluprofile/__better_errors/ef8597466fc72e8d/variables" for 127.0.0.1 at 2018-08-21 17:40:51 -0400
+Started GET "/oluprofile/users" for 127.0.0.1 at 2018-08-21 17:40:59 -0400
+Processing by Oluprofile::UsersController#index as HTML
+  [1m[36mOluprofile::User Load (0.4ms)[0m  [1m[34mSELECT  "oluprofile_users".* FROM "oluprofile_users" WHERE "oluprofile_users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/sitheris/dev/railsapps/oluprofile/app/views/oluprofile/users/index.html.erb within layouts/oluprofile/application
+  [1m[36mOluprofile::User Load (0.3ms)[0m  [1m[34mSELECT "oluprofile_users".* FROM "oluprofile_users"[0m
+  ↳ /home/sitheris/dev/railsapps/oluprofile/app/views/oluprofile/users/index.html.erb:19
+  Rendered /home/sitheris/dev/railsapps/oluprofile/app/views/oluprofile/users/index.html.erb within layouts/oluprofile/application (4.0ms)
+Completed 500 Internal Server Error in 1456ms (ActiveRecord: 5.7ms)
+
+
+
+Sass::SyntaxError - File to import not found or unreadable: material_icons.
+Load paths:
+  /home/sitheris/dev/railsapps/oluprofile/spec/dummy/app/assets/config
+  /home/sitheris/dev/railsapps/oluprofile/spec/dummy/app/assets/images
+  /home/sitheris/dev/railsapps/oluprofile/spec/dummy/app/assets/javascripts
+  /home/sitheris/dev/railsapps/oluprofile/spec/dummy/app/assets/stylesheets
+  /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/material_icons-2.2.1/app/assets/fonts
+  /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/material_icons-2.2.1/app/assets/stylesheets
+  /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/materialize-sass-0.100.2/app/assets/fonts
+  /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/materialize-sass-0.100.2/app/assets/javascripts
+  /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/materialize-sass-0.100.2/app/assets/stylesheets
+  /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/jquery-ui-rails-6.0.1/app/assets/images
+  /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/jquery-ui-rails-6.0.1/app/assets/javascripts
+  /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/jquery-ui-rails-6.0.1/app/assets/stylesheets
+  /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/jquery-rails-4.3.3/vendor/assets/javascripts
+  /home/sitheris/dev/railsapps/oluprofile/app/assets/config
+  /home/sitheris/dev/railsapps/oluprofile/app/assets/images
+  /home/sitheris/dev/railsapps/oluprofile/app/assets/javascripts
+  /home/sitheris/dev/railsapps/oluprofile/app/assets/stylesheets
+  /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actioncable-5.2.1/lib/assets/compiled
+  /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/app/assets/javascripts
+  /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actionview-5.2.1/lib/assets/compiled
+  /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/rails-ujs-0.1.0/dist
+  /home/sitheris/dev/railsapps/oluprofile/spec/dummy/node_modules
+  /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/materialize-sass-0.100.2/app/assets/stylesheets
+  /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/materialize-sass-0.100.2/app/assets/javascripts
+  /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/materialize-sass-0.100.2/app/assets/fonts
+  /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/materialize-sass-0.100.2/app/assets/images
+  /home/sitheris/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/materialize-sass-0.100.2/app/assets/stylesheets:
+
+Started POST "/oluprofile/__better_errors/b60380ff6cbca8ee/variables" for 127.0.0.1 at 2018-08-21 17:41:01 -0400

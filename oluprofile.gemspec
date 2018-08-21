@@ -18,9 +18,21 @@ Gem::Specification.new do |s|
 
   # Rails Core Dependencies
   s.add_dependency "rails", "~> 5.2.0"
+  s.add_dependency "jquery-rails"
+  s.add_dependency "sassc"
+  s.add_dependency "sass-rails"
+  s.add_dependency "uglifier"
+
+
 
   # UI and other dependencies
   s.add_dependency "sorcery", "~> 0.12.0"
+  s.add_dependency "simple_form"
+  s.add_dependency "rails-ujs"
+  s.add_dependency "jquery-ui-rails"
+  s.add_dependency "materialize-sass", "~> 0.100.2"
+  s.add_dependency "material_icons"
+  s.add_dependency "materialize-form"
 
   # Add development dependencies
   s.add_development_dependency "rspec-rails", "~> 3.8.0"
@@ -28,5 +40,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "better_errors"
   s.add_development_dependency "binding_of_caller"
   s.add_development_dependency "puma"
+  s.add_development_dependency "pg"
+  s.add_development_dependency "figaro"
 
 end

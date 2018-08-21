@@ -10,6 +10,34 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
+
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import "materialize";
+@import "material_icons";
+@import "materialize/components/color";
+$primary-color: color("teal", "darken-2") !default;
+$secondary-color: color("teal", "lighten-2") !default;
+
+
+.ob-text-secondary {
+  color: #4db6ac !important;
+}
+
+.ob-secondary {
+  background-color: #4db6ac !important;
+}
+
+.ob-text-primary {
+  color: #00796b !important;
+}
+
+.ob-primary {
+  background-color: #00796b !important;
+}
+
+
+.ob-accent {
+  background-color: #e0f2f1 !important;
+}

@@ -1,57 +1,32 @@
-<%= form_with(model: user, local: true) do |form| %>
-  <% if user.errors.any? %>
+<%= simple_form_for @user do |f| %>
+  <% if @user.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
       <ul>
-      <% user.errors.full_messages.each do |message| %>
+      <% @user.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
+  <%= f.input :email %>
 
-  <div class="field">
-     <%= form.label :password %>
-     <%= form.password_field :password %>
-  </div>
+  <%= f.input :password %>
 
-  <div class="field">
-     <%= form.label :password_confirmation %>
-     <%= form.password_field :password_confirmation %>
-  </div>
+  <%= f.input :password_confirmation %>
 
-  <div class="field">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
-  </div>
+  <%= f.input :first_name %>
 
-  <div class="field">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
-  </div>
+  <%= f.input :last_name %>
+  
+  <%= f.input :description %>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
-  </div>
+  <%= f.input :phone_number %>
 
-  <div class="field">
-    <%= form.label :phone_number %>
-    <%= form.text_field :phone_number %>
-  </div>
-
-  <div class="field">
-    <%= form.label :location %>
-    <%= form.text_field :location %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <%= f.input :location %>
+  
+  <%= f.button :submit %>
+  
 <% end %>
