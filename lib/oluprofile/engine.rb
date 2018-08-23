@@ -9,7 +9,6 @@ module Oluprofile
     require 'jquery-rails'
     require 'jquery-ui-rails'
     require 'materialize-sass'
-    require 'material_icons'
 
   end
 end

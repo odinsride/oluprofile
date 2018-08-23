@@ -30,9 +30,7 @@ Gem::Specification.new do |s|
   s.add_dependency "simple_form"
   s.add_dependency "rails-ujs"
   s.add_dependency "jquery-ui-rails"
-  s.add_dependency "materialize-sass", "~> 0.100.2"
-  s.add_dependency "material_icons"
-  s.add_dependency "materialize-form"
+  s.add_dependency "materialize-sass", "~> 1.0.0.rc2"
 
   # Add development dependencies
   s.add_development_dependency "rspec-rails", "~> 3.8.0"
