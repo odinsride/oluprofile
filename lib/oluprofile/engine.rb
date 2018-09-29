@@ -10,5 +10,10 @@ module Oluprofile
     require 'jquery-ui-rails'
     require 'materialize-sass'
 
+    config.generators do |g|
+      g.test_framework :rspec, :fixture => false
+      g.fixture_replacement :factory_bot, :dir => 'spec/factories'
+    end
+
   end
 end

@@ -33,8 +33,6 @@ Gem::Specification.new do |s|
   s.add_dependency "materialize-sass", "~> 1.0.0.rc2"
 
   # Add development dependencies
-  s.add_development_dependency "rspec-rails", "~> 3.8.0"
-  s.add_development_dependency "factory_bot"
   s.add_development_dependency "better_errors"
   s.add_development_dependency "binding_of_caller"
   s.add_development_dependency "puma"
