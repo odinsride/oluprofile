@@ -11,7 +11,12 @@ gemspec
 # Git. Remember to move these dependencies to your gemspec before releasing
 # your gem to rubygems.org.
 
-
 group :test, :development do
+  gem "rspec-rails", "~> 3.8.0"
   gem "pry-byebug"
+end
+
+group :test do
+  gem "factory_bot_rails"
+  gem "database_cleaner"
 end
