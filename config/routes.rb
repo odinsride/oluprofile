@@ -1,4 +1,5 @@
 Oluprofile::Engine.routes.draw do
+  resources :skills
   root :to => 'users#index'
   resources :user_sessions
   resources :users

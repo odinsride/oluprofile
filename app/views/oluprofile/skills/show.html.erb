@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @skill.name %>
+</p>
+
+<p>
+  <strong>First used:</strong>
+  <%= @skill.first_used %>
+</p>
+
+<p>
+  <strong>Last used:</strong>
+  <%= @skill.last_used %>
+</p>
+
+<p>
+  <strong>Proficiency:</strong>
+  <%= @skill.proficiency %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @skill.active %>
+</p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @skill.order %>
+</p>
+
+<%= link_to 'Edit', edit_skill_path(@skill) %> |
+<%= link_to 'Back', skills_path %>

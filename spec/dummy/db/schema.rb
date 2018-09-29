@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_16_231546) do
+ActiveRecord::Schema.define(version: 2018_09_29_171714) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "oluprofile_skills", force: :cascade do |t|
+    t.string "name"
+    t.integer "first_used"
+    t.integer "last_used"
+    t.integer "proficiency"
+    t.boolean "active"
+    t.integer "order"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_oluprofile_skills_on_name", unique: true
+    t.index ["user_id"], name: "index_oluprofile_skills_on_user_id"
+  end
 
   create_table "oluprofile_users", force: :cascade do |t|
     t.string "email", null: false
